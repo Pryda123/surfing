@@ -85,5 +85,108 @@
         line-height: 19px;
     }
 }
+.header__aside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    border-right: 1px solid rgba(#fff, 0.25);
+    height: 100vh;
+    text-align: center;
+    color: #fff;
+}
+.header__title {
+    font-weight: 800;
+    font-size: 200px;
+    line-height: 156px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    opacity: 0.07;
+    max-width: 467px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+}
+.menu {
+    padding-top: 40px;
+    a {
+        color: #fff;
+        span {
+            display: block;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 3px;
+            padding-top: 6px;
+            margin-bottom: 20px;
+        }
+    }
+}
+.header__search {
+    padding-top: 15px;
+    padding-bottom: 35px;
+}
+.header__date {
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 64px;
+    margin-bottom: 30px;
+    span {
+        padding-top: 15px;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: 1.4px;
+        display: block;
+    }
+}
+.header__location {
+    display: inline-block;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 1.05px;
+    position: relative;
+    padding-left: 19px;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 11px;
+        height: 13px;
+        background-image: url('../img/map-marker.svg');
+        left: 0;
+        top: 0;
+    }
+}
+.header__map {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 3;
+}
+.header__arrows {
+    position: absolute;
+    left: 210px;
+    bottom: 40px;
+    z-index: 3;
+}
+.line-animation {
+    stroke-dashoffset: 600;
+    stroke-dasharray: 600;
+    animation: animdash 3s 6s;
+    animation-fill-mode: forwards; // остановка анимации на последнем ключевом кадре to или 100%
+}
+
+@keyframes animdash {
+    from {
+        stroke-dashoffset: 600;
+        stroke-dasharray: 600;
+    }
+    to {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 600;
+    }
+}
 
 @import "media";
