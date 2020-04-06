@@ -11,21 +11,74 @@ $('.slider-dotshead').slick({
     slidesToShow: 4,
     slidesToScroll: 4,
     asNavFor: '.header__slider',
-    focusOnSelect: true // нажатие на элемент
+    focusOnSelect: true, // нажатие на элемент
+    responsive: [
+      {
+        breakpoint: 961,
+        settings: 'unslick'
+      },
+    ]
 })
 $('.serf-slider').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
     prevArrow: '<img class="slider-arrows slider-arrows__left" src="img/arrows-left.svg" alt="">',
     nextArrow: '<img class="slider-arrows slider-arrows__rigth" src="img/arrows-right.svg" alt="">',
-    asNavFor: '.slider-map'
+    asNavFor: '.slider-map',
+    responsive: [
+      {
+        breakpoint: 1210,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 720,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+        }
+      },
+    ]
 })
 $('.slider-map').slick({
     slidesToShow: 8,
     slidesToScroll: 1,
     arrows: false,
     asNavFor: '.serf-slider',
-    focusOnSelect: true
+    focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: 1110,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          centerMode: true,
+        }
+      },
+      {
+        breakpoint: 720,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+        }
+      },
+    ]
 })
 $('.holder__slider, .shop__slider').slick({
     infinite: true,
@@ -88,6 +141,10 @@ $('.quantity').each(function() {
 
 $('.surfboard-box__circle').on('click', function() {
   $(this).toggleClass('active')
+})
+
+$('.menu-btn').on('click', function() {
+  $('.menu').toggleClass('active')
 })
   
 });
